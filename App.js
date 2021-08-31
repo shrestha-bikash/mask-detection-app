@@ -128,7 +128,7 @@ export default function App() {
             style={{
               flex: 1,
               width: '100%',
-              height: '80%',
+              height: '90%',
               justifyContent: 'center',
               alignItems: 'center'
             }}
@@ -144,7 +144,10 @@ export default function App() {
                   <CameraPreview photo={capturedImage} ></CameraPreview>
                   {
                     predictedValue ? 
-                    <Text style={{marginBottom: 15}}>Class: {predictedValue.predicted_class} Probability: {predictedValue.probability}</Text>
+                    <View style={{marginBottom: 15, width: '100%'}}>
+                      <Text style={{textAlign: 'center', fontWeight: '700'}}>Class: {predictedValue.predicted_class} </Text>
+                      <Text style={{textAlign: 'center', fontWeight: '700'}}> Probability: {predictedValue.probability}</Text>
+                    </View>
                     :
                     <ActivityIndicator style={styles.activityIndicatiorStyle} color="#000000" size="large" />
                   }
